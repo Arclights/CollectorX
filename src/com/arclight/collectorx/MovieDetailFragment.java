@@ -10,11 +10,6 @@ import java.net.Socket;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import populators.CastPopulator;
-import populators.CrewPopulator;
-import populators.EditionDetailsPopulator;
-import populators.TechnicalDetailsPopulator;
-import populators.TopInfoPopulator;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,6 +23,11 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.arclight.collectorx.moviecontainers.MovieDetails;
+import com.arclight.collectorx.populators.CastPopulator;
+import com.arclight.collectorx.populators.CrewPopulator;
+import com.arclight.collectorx.populators.EditionDetailsPopulator;
+import com.arclight.collectorx.populators.TechnicalDetailsPopulator;
+import com.arclight.collectorx.populators.TopInfoPopulator;
 import com.arclight.collectorx.xmlparsers.DetailsXMLParser;
 
 /**
