@@ -26,6 +26,7 @@ import com.arclight.collectorx.moviecontainers.MovieDetails;
 import com.arclight.collectorx.populators.CastPopulator;
 import com.arclight.collectorx.populators.CrewPopulator;
 import com.arclight.collectorx.populators.EditionDetailsPopulator;
+import com.arclight.collectorx.populators.LinksPopulator;
 import com.arclight.collectorx.populators.TechnicalDetailsPopulator;
 import com.arclight.collectorx.populators.TopInfoPopulator;
 import com.arclight.collectorx.xmlparsers.DetailsXMLParser;
@@ -113,6 +114,9 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 			// Edition info
 			EditionDetailsPopulator.populate(mItem.editionDetails,
 					getActivity());
+
+			// Links
+			LinksPopulator.populate(mItem.links, getActivity());
 		}
 	}
 

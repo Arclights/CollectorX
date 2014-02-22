@@ -39,6 +39,10 @@
         <include
             android:id="@+id/movie_edition_details"
             layout="@layout/movie_details_edition" />
+        
+        <include
+            android:id="@+id/movie_links_container"
+            layout="@layout/movie_details_links" />
     </RelativeLayout>
 
 </ScrollView>

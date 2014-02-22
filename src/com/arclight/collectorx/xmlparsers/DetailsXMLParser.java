@@ -96,7 +96,7 @@ public class DetailsXMLParser {
 			} else if (name.equals("sound_formats")) {
 				movieDetails.technicalDetails.soundFormats = parseSoundFormats(parser);
 			} else if (name.equals("links")) {
-				movieDetails.links = parseLinks(parser);
+				movieDetails.links = parseLinks(parser, activity);
 			} else {
 				skip(parser);
 			}
@@ -495,22 +495,22 @@ public class DetailsXMLParser {
 		return soundFormat;
 	}
 
-	private static ArrayList<Link> parseLinks(XmlPullParser parser)
-			throws XmlPullParserException, IOException {
+	private static ArrayList<Link> parseLinks(XmlPullParser parser,
+			Activity activity) throws XmlPullParserException, IOException {
 		ArrayList<Link> links = new ArrayList<Link>();
 		parser.require(XmlPullParser.START_TAG, ns, "links");
 		parser.nextTag();
 		while (parser.getName().equals("link")) {
-			links.add(parseLink(parser));
+			links.add(parseLink(parser, activity));
 			parser.nextTag();
 		}
 		parser.require(XmlPullParser.END_TAG, ns, "links");
 		return links;
 	}
 
-	private static Link parseLink(XmlPullParser parser)
+	private static Link parseLink(XmlPullParser parser, Activity activity)
 			throws XmlPullParserException, IOException {
-		Link link = new Link();
+		Link link = new Link(activity);
 		parser.require(XmlPullParser.START_TAG, ns, "link");
 		parser.nextTag();
 		link.title = parseTitle(parser);
