@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/movie_cast_container"
+    android:layout_margin="5dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crew"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_underline" />
+
+    <TableLayout
+        android:id="@+id/movie_crew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:showDividers="middle" >
+    </TableLayout>
+
+    <Button
+        android:id="@+id/movie_show_crew"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_action_expand" />
+
+</LinearLayout>

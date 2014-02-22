@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textIsSelectable="true" >
+
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/movie_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_title"
+        android:layout_margin="5dp"
+        android:background="@color/AppColor"
+        android:contentDescription="Movie Image"
+        android:padding="1dp" />
+
+    <TextView
+        android:id="@+id/movie_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_title"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image" />
+
+    <TextView
+        android:id="@+id/movie_runtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_year"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image" />
+
+    <TextView
+        android:id="@+id/movie_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_runtime"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image"
+        android:drawableLeft="@drawable/ic_barcode"
+        android:drawablePadding="5dp" />
+
+    <LinearLayout
+        android:id="@+id/movie_regions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_runtime"
+        android:layout_toRightOf="@id/movie_medium"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/movie_audience_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_runtime"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_regions"
+        android:drawablePadding="5dp" />
+
+    <TextView
+        android:id="@+id/movie_rating_imdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_medium"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image"
+        android:drawableLeft="@drawable/ic_logo_imdb"
+        android:drawablePadding="5dp" />
+
+    <TextView
+        android:id="@+id/movie_rating_metascore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_rating_imdb"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image"
+        android:drawableLeft="@drawable/ic_metacritic_logo"
+        android:drawablePadding="5dp" />
+
+    <TextView
+        android:id="@+id/movie_rating_tomatoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_rating_metascore"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_image"
+        android:drawableLeft="@drawable/ic_tomatoes_fresh"
+        android:drawablePadding="5dp" />
+
+    <TextView
+        android:id="@+id/movie_rating_tomatoes_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_rating_metascore"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/movie_rating_tomatoes"
+        android:drawableLeft="@drawable/ic_flixster_logo"
+        android:drawablePadding="5dp" />
+
+</RelativeLayout>
