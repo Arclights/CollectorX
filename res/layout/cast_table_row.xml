@@ -2,6 +2,7 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/list_feedback"
     android:clickable="true" >
 
     <RelativeLayout
@@ -24,8 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toRightOf="@id/cast_list_item_image"
-            android:orientation="vertical"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/cast_list_item_actor"

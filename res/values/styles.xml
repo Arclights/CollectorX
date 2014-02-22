@@ -27,5 +27,8 @@
     </style>
 
     <color name="AppColor">#FF8800</color>
+    <color name="ListItemDefault">#00000000</color>
+    <color name="ListItemPressed">#11000000</color>
+    <color name="ListItemFocused">#FF000000</color>
 
 </resources>
