@@ -566,8 +566,11 @@ public class DetailsXMLParser {
 	private static Bitmap readImage(XmlPullParser parser) throws IOException,
 			XmlPullParserException {
 		String image = readText(parser);
-		byte[] bytes = Base64.decode(image, Base64.DEFAULT);
-		return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+		if (!image.equals("")) {
+			byte[] bytes = Base64.decode(image, Base64.DEFAULT);
+			return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+		}
+		return null;
 	}
 
 	private static void skip(XmlPullParser parser)

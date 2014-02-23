@@ -15,7 +15,7 @@
 
     <include
         layout="@layout/fragment_movie_detail"
-        android:visibility="gone"
+        android:visibility="invisible"
         android:id="@+id/movie_detail_fragment" />
 
 </FrameLayout>

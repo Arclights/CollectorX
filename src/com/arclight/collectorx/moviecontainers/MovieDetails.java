@@ -61,7 +61,7 @@ public class MovieDetails implements Serializable, Parcelable {
 	}
 
 	public MovieDetails(Parcel in) {
-		genres = (String[]) in.readArray(String.class.getClassLoader());
+		in.readStringArray(genres);
 		in.readMap(crew, HashMap.class.getClassLoader());
 		cast = (Role[]) in.readArray(Role.class.getClassLoader());
 		plot = in.readString();

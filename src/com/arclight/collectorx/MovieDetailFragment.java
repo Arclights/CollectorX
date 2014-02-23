@@ -78,6 +78,15 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 	}
 
 	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		if (savedInstanceState != null) {
+			updateContent();
+		}
+
+	}
+
+	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putParcelable("movie_details", mItem);
@@ -128,6 +137,13 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 
 			// Links
 			LinksPopulator.populate(mItem.links, getActivity());
+
+			((ProgressBar) getActivity().findViewById(R.id.progBar))
+					.setVisibility(ProgressBar.INVISIBLE);
+			((ViewGroup) getActivity().findViewById(R.id.movie_detail_fragment))
+					.setVisibility(ViewGroup.VISIBLE);
+			((ViewGroup) getActivity().findViewById(R.id.movie_top_info))
+					.invalidate();
 		}
 	}
 
@@ -202,12 +218,6 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 		protected void onPostExecute(MovieDetails result) {
 			mItem = result;
 			updateContent();
-			((ProgressBar) getActivity().findViewById(R.id.progBar))
-					.setVisibility(ProgressBar.INVISIBLE);
-			((ViewGroup) getActivity().findViewById(R.id.movie_detail_fragment))
-					.setVisibility(ViewGroup.VISIBLE);
-			((ViewGroup) getActivity().findViewById(R.id.movie_top_info))
-					.invalidate();
 		}
 	}
 }
