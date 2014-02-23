@@ -47,7 +47,7 @@ public class MovieArrayAdapter extends ArrayAdapter<MovieListItem> implements
 	public int getPositionForSection(int section) {
 		Log.d("ListView", "Get position for section");
 		for (int i = 0; i < this.getCount(); i++) {
-			String item = this.getItem(i).title.toLowerCase();
+			String item = this.getItem(i).title.toLowerCase(getContext().getResources().getConfiguration().locale);
 			if (item.charAt(0) == sections.charAt(section))
 				return i;
 		}

@@ -6,7 +6,6 @@ import java.util.Iterator;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,14 +20,12 @@ public class LinksPopulator {
 		Iterator<Link> it = links.iterator();
 		while (it.hasNext()) {
 			Link link = it.next();
-			View v = ((LayoutInflater) activity
+			TextView tv = ((TextView) ((LayoutInflater) activity
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-					.inflate(android.R.layout.simple_list_item_1, null);
-			TextView tv = (TextView) v.findViewById(android.R.id.text1);
-			System.out.println(link.title);
+					.inflate(R.layout.link_list_item, null));
 			tv.setText(link.title);
 			tv.setOnClickListener(link);
-			ll.addView(v);
+			ll.addView(tv);
 			if (it.hasNext()) {
 				ll.addView(Separators.getTableSeparator(activity));
 			}

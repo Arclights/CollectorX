@@ -19,7 +19,7 @@
         android:layout_below="@id/movie_title"
         android:layout_margin="5dp"
         android:background="@color/AppColor"
-        android:contentDescription="Movie Image"
+        android:contentDescription="@string/cont_desc_movie_poster"
         android:padding="1dp" />
 
     <TextView

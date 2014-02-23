@@ -15,7 +15,8 @@
             android:id="@+id/movie_list_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:contentDescription="@string/cont_desc_movie_thumbnail" />
 
         <TextView
             android:id="@+id/movie_list_name"

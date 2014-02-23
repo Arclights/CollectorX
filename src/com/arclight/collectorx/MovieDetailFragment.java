@@ -66,10 +66,21 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		if (getArguments().containsKey(ARG_ID)) {
-			new MovieDetailRetriever()
-					.execute(getArguments().getString(ARG_ID));
+
+		if (savedInstanceState != null) {
+			mItem = savedInstanceState.getParcelable("movie_details");
+		} else {
+			if (getArguments().containsKey(ARG_ID)) {
+				new MovieDetailRetriever().execute(getArguments().getString(
+						ARG_ID));
+			}
 		}
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		outState.putParcelable("movie_details", mItem);
 	}
 
 	private void updateContent() {

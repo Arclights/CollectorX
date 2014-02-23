@@ -3,5 +3,21 @@
 
     <string name="app_name">CollectorX</string>
     <string name="title_movie_detail">Movie Detail</string>
+    <string name="cont_desc_profile_image">Profile Image</string>
+    <string name="title_cast">Cast</string>
+    <string name="title_crew">Crew</string>
+    <string name="title_edition_details">Edition Details</string>
+    <string name="title_genres">Genres</string>
+    <string name="title_plot">Plot</string>
+    <string name="title_links">Links</string>
+    <string name="title_technical_info">Technical Info</string>
+    <string name="studio">Studio</string>
+    <string name="country">Country</string>
+    <string name="language">Language</string>
+    <string name="picture_formats">Picture Formats</string>
+    <string name="subtitles">Subtitles</string>
+    <string name="sound_formats">Sound Formats</string>
+    <string name="cont_desc_movie_poster">Movie Poster</string>
+    <string name="cont_desc_movie_thumbnail">Movie Thumbnail</string>
 
 </resources>

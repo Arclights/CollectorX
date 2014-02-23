@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:background="#000000"
+        android:contentDescription="@string/cont_desc_profile_image"
         android:padding="1dp"
         android:src="@drawable/ic_profile" />
 

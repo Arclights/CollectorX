@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Technical info"
+        android:text="@string/title_technical_info"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Studio"
+                android:text="@string/studio"
                 android:textStyle="bold" />
 
             <TextView
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Country"
+                android:text="@string/country"
                 android:textStyle="bold" />
 
             <TextView
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Language"
+                android:text="@string/language"
                 android:textStyle="bold" />
 
             <TextView
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Picture Formats"
+                android:text="@string/picture_formats"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Subtitles"
+                android:text="@string/subtitles"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:text="Sound Formats"
+                android:text="@string/sound_formats"
                 android:textStyle="bold" />
 
             <LinearLayout

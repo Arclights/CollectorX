@@ -197,6 +197,7 @@ public class MovieListFragment extends ListFragment {
 					movieList.append(inString);
 					movieList.append("\n");
 				}
+				kkSocket.close();
 				System.out.println("All downloaded");
 				return ListXMLParser.parse(new ByteArrayInputStream(movieList
 						.toString().getBytes()));
@@ -219,7 +220,7 @@ public class MovieListFragment extends ListFragment {
 			System.out.println(getListView().isFastScrollEnabled());
 		}
 
-		private Comparator<MovieListItem> getComparator() {
+		public Comparator<MovieListItem> getComparator() {
 			return new Comparator<MovieListItem>() {
 
 				@Override

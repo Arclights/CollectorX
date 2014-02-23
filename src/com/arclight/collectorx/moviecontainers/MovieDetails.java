@@ -6,7 +6,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class MovieDetails implements Serializable {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class MovieDetails implements Serializable, Parcelable {
 	/**
 	 * 
 	 */
@@ -26,7 +29,7 @@ public class MovieDetails implements Serializable {
 		editionDetails = new EditionDetails();
 		technicalDetails = new TechnicalDetails();
 	}
-	
+
 	public String getGenres() {
 		StringBuilder out = new StringBuilder();
 		Iterator<String> it = Arrays.asList(genres).iterator();
@@ -38,6 +41,47 @@ public class MovieDetails implements Serializable {
 		}
 		return out.toString();
 	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeArray(genres);
+		out.writeMap(crew);
+		out.writeArray(cast);
+		out.writeString(plot);
+		out.writeList(links);
+		out.writeParcelable(topInfo, flags);
+		out.writeParcelable(editionDetails, flags);
+		out.writeParcelable(technicalDetails, flags);
+	}
+
+	public MovieDetails(Parcel in) {
+		genres = (String[]) in.readArray(String.class.getClassLoader());
+		in.readMap(crew, HashMap.class.getClassLoader());
+		cast = (Role[]) in.readArray(Role.class.getClassLoader());
+		plot = in.readString();
+		links = in.readArrayList(Link.class.getClassLoader());
+		topInfo = in.readParcelable(TopInfo.class.getClassLoader());
+		editionDetails = in.readParcelable(EditionDetails.class
+				.getClassLoader());
+		technicalDetails = in.readParcelable(TechnicalDetails.class
+				.getClassLoader());
+	}
+
+	public static final Parcelable.Creator<MovieDetails> CREATOR = new Parcelable.Creator<MovieDetails>() {
+		public MovieDetails createFromParcel(Parcel in) {
+			return new MovieDetails(in);
+		}
+
+		public MovieDetails[] newArray(int size) {
+			return new MovieDetails[size];
+		}
+	};
 
 	// public String getTechnicalInfo() {
 	// return country + " / " + language + " / " + color + " / "
