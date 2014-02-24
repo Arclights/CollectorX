@@ -17,6 +17,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -73,6 +74,8 @@ public class MovieListFragment extends ListFragment {
 		}
 	};
 
+	private ArrayList<MovieListItem> movie_list;
+
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
@@ -84,12 +87,19 @@ public class MovieListFragment extends ListFragment {
 	public void onActivityCreated(Bundle savedState) {
 		super.onActivityCreated(savedState);
 		this.setListShown(true);
+		if (savedState != null) {
+			updateList();
+		}
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		new MovieListItemRetiever().execute("");
+		if (savedInstanceState == null) {
+			new MovieListItemRetiever().execute("");
+		} else {
+			movie_list = savedInstanceState.getParcelableArrayList("movie_list");
+		}
 
 		setListAdapter(new MovieArrayAdapter(getActivity(),
 				R.layout.movie_list_item_layout, android.R.id.text1,
@@ -144,6 +154,7 @@ public class MovieListFragment extends ListFragment {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
+		outState.putParcelableArrayList("movie_list", movie_list);
 		if (mActivatedPosition != ListView.INVALID_POSITION) {
 			// Serialize and persist the activated item position.
 			outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
@@ -170,6 +181,14 @@ public class MovieListFragment extends ListFragment {
 		}
 
 		mActivatedPosition = position;
+	}
+
+	private void updateList() {
+		((MovieArrayAdapter) getListAdapter()).update(movie_list);
+		((ProgressBar) getActivity().findViewById(R.id.progBar))
+				.setVisibility(ProgressBar.INVISIBLE);
+		// getListView().setFastScrollEnabled(true);
+		System.out.println(getListView().isFastScrollEnabled());
 	}
 
 	private class MovieListItemRetiever extends
@@ -213,11 +232,8 @@ public class MovieListFragment extends ListFragment {
 
 		@Override
 		protected void onPostExecute(ArrayList<MovieListItem> result) {
-			((MovieArrayAdapter) getListAdapter()).update(result);
-			((ProgressBar) getActivity().findViewById(R.id.progBar))
-					.setVisibility(ProgressBar.INVISIBLE);
-			// getListView().setFastScrollEnabled(true);
-			System.out.println(getListView().isFastScrollEnabled());
+			movie_list = result;
+			updateList();
 		}
 
 		public Comparator<MovieListItem> getComparator() {
