@@ -1,0 +1,107 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetailFragment" >
+
+    <RelativeLayout
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="11dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp" >
+
+        <LinearLayout
+            android:id="@+id/movie_top_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <include layout="@layout/movie_details_top_info" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_genres_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_top_info" >
+
+            <include layout="@layout/movie_details_genres" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_plot_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_genres_container" >
+
+            <include layout="@layout/movie_details_plot" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_cast_crew_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_plot_container"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <LinearLayout
+                android:id="@+id/movie_cast_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" >
+
+                <include layout="@layout/movie_details_cast" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movie_crew_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" >
+
+                <include layout="@layout/movie_details_crew" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_tech_edition_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_cast_crew_container"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <LinearLayout
+                android:id="@+id/movie_tech_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" >
+
+                <include layout="@layout/movie_details_tech" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movie_edition_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" >
+
+                <include layout="@layout/movie_details_edition" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/movie_links_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_tech_edition_container" >
+
+            <include layout="@layout/movie_details_links" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

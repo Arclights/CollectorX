@@ -110,7 +110,7 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 					R.id.movie_cast);
 			CastPopulator.populate((Context) getActivity(), castTabLay,
 					mItem.cast, showFullCast, getResources());
-			castTabLay.setColumnShrinkable(1, true);
+//			castTabLay.setColumnShrinkable(1, true);
 
 			showCast = (Button) getActivity()
 					.findViewById(R.id.movie_show_cast);
@@ -121,7 +121,7 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 					R.id.movie_crew);
 			CrewPopulator.populate((Context) getActivity(), crewTabLay,
 					mItem.crew, showFullCrew);
-			crewTabLay.setColumnShrinkable(1, true);
+//			crewTabLay.setColumnShrinkable(1, true);
 
 			showCrew = (Button) getActivity()
 					.findViewById(R.id.movie_show_crew);
@@ -138,7 +138,7 @@ public class MovieDetailFragment extends Fragment implements OnClickListener {
 			// Links
 			LinksPopulator.populate(mItem.links, getActivity());
 
-			((ProgressBar) getActivity().findViewById(R.id.progBar))
+			((ProgressBar) getActivity().findViewById(R.id.progBar_details))
 					.setVisibility(ProgressBar.INVISIBLE);
 			((ViewGroup) getActivity().findViewById(R.id.movie_detail_fragment))
 					.setVisibility(ViewGroup.VISIBLE);

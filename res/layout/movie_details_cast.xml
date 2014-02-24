@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@id/movie_plot_container"
     android:layout_margin="5dp"
     android:orientation="vertical" >
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_cast"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <View
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/title_underline" />
 
     <TableLayout
         android:id="@+id/movie_cast"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:showDividers="middle" >
     </TableLayout>

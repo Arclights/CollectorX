@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
@@ -23,15 +23,15 @@
             android:src="@drawable/ic_profile" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_toRightOf="@id/cast_list_item_image"
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/cast_list_item_actor"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:textStyle="bold" />

@@ -185,7 +185,7 @@ public class MovieListFragment extends ListFragment {
 
 	private void updateList() {
 		((MovieArrayAdapter) getListAdapter()).update(movie_list);
-		((ProgressBar) getActivity().findViewById(R.id.progBar))
+		((ProgressBar) getActivity().findViewById(R.id.progBar_list))
 				.setVisibility(ProgressBar.INVISIBLE);
 		// getListView().setFastScrollEnabled(true);
 		System.out.println(getListView().isFastScrollEnabled());
