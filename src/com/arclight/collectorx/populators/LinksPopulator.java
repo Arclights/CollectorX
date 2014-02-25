@@ -17,6 +17,7 @@ public class LinksPopulator {
 	public static void populate(ArrayList<Link> links, Activity activity) {
 		LinearLayout ll = ((LinearLayout) activity
 				.findViewById(R.id.movie_links));
+		ll.removeAllViews();
 		Iterator<Link> it = links.iterator();
 		while (it.hasNext()) {
 			Link link = it.next();

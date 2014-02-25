@@ -33,7 +33,7 @@ public class CrewPopulator {
 
 	public static void populate(Context context, TableLayout tabLay,
 			HashMap<String, Person[]> crew, boolean showFullCrew) {
-
+		tabLay.removeAllViews();
 		Iterator<String> it = jobs.iterator();
 		String job;
 		while (it.hasNext()) {

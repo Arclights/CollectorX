@@ -32,6 +32,7 @@ public class TechnicalDetailsPopulator {
 		// Picture Formats
 		LinearLayout pictureFormats = ((LinearLayout) activity
 				.findViewById(R.id.movie_picture_formats));
+		pictureFormats.removeAllViews();
 		for (String pictureFormat : technicalDetails.pictureFormats) {
 			tv = new TextView(activity);
 			tv.setText(pictureFormat);
@@ -41,15 +42,17 @@ public class TechnicalDetailsPopulator {
 		// Subtitles
 		LinearLayout subtitles = ((LinearLayout) activity
 				.findViewById(R.id.movie_subtitles));
+		subtitles.removeAllViews();
 		for (String subtitle : technicalDetails.subtitles) {
 			tv = new TextView(activity);
 			tv.setText(subtitle);
 			subtitles.addView(tv);
 		}
 
-		// Picture Formats
+		// Sound Formats
 		LinearLayout soundFormats = ((LinearLayout) activity
 				.findViewById(R.id.movie_sound_formats));
+		soundFormats.removeAllViews();
 		for (SoundFormat soundFormat : technicalDetails.soundFormats) {
 			tv = new TextView(activity);
 			if (soundFormat.image != null) {

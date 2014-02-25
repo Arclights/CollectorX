@@ -1,10 +1,6 @@
 package com.arclight.collectorx.populators;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.Display;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,20 +11,14 @@ import com.arclight.collectorx.moviecontainers.Region;
 import com.arclight.collectorx.moviecontainers.TopInfo;
 
 public class TopInfoPopulator {
-	private static double movieImageRatio = 1.5;
-	private static double movieImageToDispWithRatio = 0.3;
 
 	public static void populate(TopInfo topInfo, Activity activity) {
 		// Image
 		ImageView movieImage = ((ImageView) activity
 				.findViewById(R.id.movie_image));
-		WindowManager wm = (WindowManager) activity
-				.getSystemService(Context.WINDOW_SERVICE);
-		Display display = wm.getDefaultDisplay();
-		int width = (int) (display.getWidth() * movieImageToDispWithRatio);
-		int height = (int) (display.getWidth() * movieImageToDispWithRatio * movieImageRatio);
-		movieImage.setImageBitmap(Bitmap.createScaledBitmap(topInfo.poster,
-				width, height, false));
+
+		movieImage.setImageBitmap(ImageHandler.resizePoster(topInfo.poster,
+				activity));
 		// Title
 		((TextView) activity.findViewById(R.id.movie_title))
 				.setText(topInfo.title);
@@ -51,6 +41,7 @@ public class TopInfoPopulator {
 		// Regions
 		LinearLayout regions = ((LinearLayout) activity
 				.findViewById(R.id.movie_regions));
+		regions.removeAllViews();
 		for (Region region : topInfo.regions) {
 			TextView tv = new TextView(activity);
 			if (region.image != null) {

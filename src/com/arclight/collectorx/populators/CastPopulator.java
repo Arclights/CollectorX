@@ -21,7 +21,7 @@ public class CastPopulator {
 
 	public static void populate(Context context, TableLayout tabLay,
 			Role[] cast, boolean showFullCast, Resources res) {
-
+		tabLay.removeAllViews();
 		Iterator<Role> it = Arrays.asList(cast).iterator();
 		Role role;
 		int rows = 1;

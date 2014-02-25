@@ -1,8 +1,12 @@
 package com.arclight.collectorx;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class ImageHandler {
 
@@ -53,10 +57,11 @@ public class ImageHandler {
 			} else {
 				scaling = imageHeight / (69 * density);
 			}
-//			System.out.println("Density: " + density);
-//			System.out.println("Original: " + imageHeight + "x" + imageWidth);
-//			System.out.println("Scaled: " + imageHeight / scaling + "x"
-//					+ imageWidth / scaling);
+			// System.out.println("Density: " + density);
+			// System.out.println("Original: " + imageHeight + "x" +
+			// imageWidth);
+			// System.out.println("Scaled: " + imageHeight / scaling + "x"
+			// + imageWidth / scaling);
 			return cropProfleImage(Bitmap.createScaledBitmap(profilePicture,
 					(int) (imageWidth / scaling),
 					(int) (imageHeight / scaling), false), density);
@@ -78,6 +83,27 @@ public class ImageHandler {
 				(profilePicture.getWidth() - newWidth) / 2,
 				(profilePicture.getHeight() - newHeight) / 2, newWidth,
 				newHeight);
+	}
+
+	private static double movieImageRatio = 1.5;
+	private static double movieImageToDispWithRatio = 0.3;
+
+	public static Bitmap resizePoster(Bitmap poster, Activity activity) {
+		WindowManager wm = (WindowManager) activity
+				.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		double width;
+		double height;
+		if (display.getWidth() > display.getHeight()) {
+			height = (double) display.getHeight() / 2 - 11 * 2;
+			width = height / movieImageRatio;
+		} else {
+			width = (double) display.getWidth() / 2 - 11 * 2;
+			height = width * movieImageRatio;
+		}
+
+		return Bitmap.createScaledBitmap(poster, (int) width, (int) height,
+				false);
 	}
 
 }
