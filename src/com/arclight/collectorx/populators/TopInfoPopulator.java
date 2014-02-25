@@ -76,7 +76,8 @@ public class TopInfoPopulator {
 		TextView rottenT = ((TextView) activity
 				.findViewById(R.id.movie_rating_tomatoes));
 		rottenT.setText(topInfo.ratings.ratingTomatoMeter + "%");
-		if (topInfo.ratings.ratingTomatoMeter.compareTo("60") < 0) {
+		if (!topInfo.ratings.ratingTomatoMeter.equals("N/A")
+				&& Integer.parseInt(topInfo.ratings.ratingTomatoMeter) < 60) {
 			rottenT.setCompoundDrawablesWithIntrinsicBounds(
 					R.drawable.ic_tomatoes_rotten, 0, 0, 0);
 		}

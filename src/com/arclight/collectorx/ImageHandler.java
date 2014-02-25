@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -12,6 +13,10 @@ public class ImageHandler {
 
 	public static BitmapDrawable getIcon(Bitmap icon, Resources res) {
 		return new BitmapDrawable(res, resizeIcon(icon, 18, res));
+	}
+	
+	public static BitmapDrawable getIconTablet(Bitmap icon, Resources res) {
+		return new BitmapDrawable(res, resizeIcon(icon, 32, res));
 	}
 
 	private static Bitmap resizeIcon(Bitmap icon, int iconBaseSize,

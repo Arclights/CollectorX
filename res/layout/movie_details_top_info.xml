@@ -24,87 +24,67 @@
 
     <TextView
         android:id="@+id/movie_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_title"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image" />
 
     <TextView
         android:id="@+id/movie_runtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_year"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image" />
 
     <TextView
         android:id="@+id/movie_medium"
+        style="@style/TopInfoText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/movie_runtime"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image"
-        android:drawableLeft="@drawable/ic_barcode"
-        android:drawablePadding="5dp" />
+        android:drawableLeft="@drawable/ic_barcode" />
 
     <LinearLayout
         android:id="@+id/movie_regions"
+        style="@style/TopInfoText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/movie_runtime"
         android:layout_toRightOf="@id/movie_medium"
         android:orientation="horizontal"
-        android:padding="5dp" >
+        >
     </LinearLayout>
 
     <TextView
         android:id="@+id/movie_audience_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_runtime"
-        android:layout_margin="5dp"
-        android:layout_toRightOf="@id/movie_regions"
-        android:drawablePadding="5dp" />
+        android:layout_toRightOf="@id/movie_regions" />
 
     <TextView
         android:id="@+id/movie_rating_imdb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_medium"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image"
-        android:drawableLeft="@drawable/ic_logo_imdb"
-        android:drawablePadding="5dp" />
+        android:drawableLeft="@drawable/ic_logo_imdb" />
 
     <TextView
         android:id="@+id/movie_rating_metascore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_rating_imdb"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image"
-        android:drawableLeft="@drawable/ic_metacritic_logo"
-        android:drawablePadding="5dp" />
+        android:drawableLeft="@drawable/ic_metacritic_logo" />
 
     <TextView
         android:id="@+id/movie_rating_tomatoes"
+        style="@style/TopInfoText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/movie_rating_metascore"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_image"
-        android:drawableLeft="@drawable/ic_tomatoes_fresh"
-        android:drawablePadding="5dp" />
+        android:drawableLeft="@drawable/ic_tomatoes_fresh" />
 
     <TextView
         android:id="@+id/movie_rating_tomatoes_users"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TopInfoText"
         android:layout_below="@id/movie_rating_metascore"
-        android:layout_margin="5dp"
         android:layout_toRightOf="@id/movie_rating_tomatoes"
-        android:drawableLeft="@drawable/ic_flixster_logo"
-        android:drawablePadding="5dp" />
+        android:drawableLeft="@drawable/ic_flixster_logo" />
 
 </RelativeLayout>
